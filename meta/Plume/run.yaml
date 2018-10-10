@@ -1,2 +1,1 @@
-config_file:
-  contents: plume_params.cfg plume_flood.cfg
+config_file: plume.txt
