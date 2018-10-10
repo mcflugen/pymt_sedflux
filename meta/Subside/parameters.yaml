@@ -52,8 +52,8 @@ youngs_modulus:
   description: "Young's modulus of lithosphere"
   value:
     type: float
-    default: 7e10
+    default: 70e9
     units: Pa
     range:
       min: 0.0
-      max: 10e13
+      max: 10e12
