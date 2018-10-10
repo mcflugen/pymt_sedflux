@@ -1,0 +1,59 @@
+number_of_rows:
+  description: Number of rows in the computational grid
+  value:
+    type: int
+    default: 500
+    units: "-"
+    range:
+      min: 0
+      max: 2147483647
+
+number_of_columns:
+  description: Number of columns in the computational grid
+  value:
+    type: int
+    default: 500
+    units: "-"
+    range:
+      min: 0
+      max: 2147483647
+
+row_spacing:
+  description: Spacing of grid rows
+  value:
+    type: float
+    default: 100.0
+    units: m
+    range:
+      min: 0.0
+      max: 10000.0
+
+column_spacing:
+  description: Spacing of grid columns
+  value:
+    type: float
+    default: 100.0
+    units: m
+    range:
+      min: 0.12
+      max: 10000.0
+
+effective_elastic_thickness:
+  description: Effective elastic thickness of lithosphere
+  value:
+    type: float
+    default: 50000.
+    units: m
+    range:
+      min: 0.0
+      max: 1000000.0
+
+youngs_modulus:
+  description: "Young's modulus of lithosphere"
+  value:
+    type: float
+    default: 7e10
+    units: Pa
+    range:
+      min: 0.0
+      max: 1000000.0

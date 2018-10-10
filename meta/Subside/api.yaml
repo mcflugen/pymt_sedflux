@@ -1,0 +1,4 @@
+name: sedflux
+language: c
+package: sedflux
+class: Subside
