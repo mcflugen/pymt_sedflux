@@ -56,4 +56,4 @@ youngs_modulus:
     units: Pa
     range:
       min: 0.0
-      max: 1000000.0
+      max: 10e13
