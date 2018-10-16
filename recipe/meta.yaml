@@ -25,7 +25,6 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - pymt
     - sedflux 
 
 test:
@@ -33,7 +32,6 @@ test:
     - bmi-tester
     - model_metadata
   imports:
-    - pymt
     - pymt_sedflux
   commands:
     - config_file=$(mmd-stage Sedflux3D . > MANIFEST && mmd-query Sedflux3D --var=run.config_file.path)

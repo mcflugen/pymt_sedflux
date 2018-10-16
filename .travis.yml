@@ -39,7 +39,6 @@ install:
 script:
 - python setup.py develop
 - python -c 'import pymt_sedflux'
-- python -c 'import pymt'
 - |
   config_file=$(mmd-stage Sedflux3D . > MANIFEST && mmd-query Sedflux3D --var=run.config_file.path)
   bmi-test pymt_sedflux.bmi:Sedflux3D --infile=$config_file --manifest=MANIFEST -v
