@@ -2,11 +2,7 @@ build:
   define_macros: []
   extra_compile_args: []
   include_dirs: []
-  libraries:
-  - bmi_sedflux3d
-  - bmi_avulsion
-  - bmi_plume
-  - bmi_subside
+  libraries: []
   library_dirs: []
   undef_macros: []
 info:
@@ -16,12 +12,12 @@ info:
   summary: PyMT plugin for sedflux
 library:
   entry_point:
-  - Sedflux3D=sedflux:register_bmi_sedflux3d
-  - Avulsion=sedflux:register_bmi_avulsion
-  - Plume=sedflux:register_bmi_plume
-  - Subside=sedflux:register_bmi_subside
+  - Sedflux3D=bmi_sedflux3d:register_bmi_sedflux3d
+  - Avulsion=bmi_avulsion:register_bmi_avulsion
+  - Plume=bmi_plume:register_bmi_plume
+  - Subside=bmi_subside:register_bmi_subside
   language: c
-  register: register_bmi_sedflux3d
+  register: ''
 plugin:
   name: sedflux
   requirements:

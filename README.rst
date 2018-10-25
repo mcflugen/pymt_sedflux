@@ -29,6 +29,16 @@ PyMT plugin for sedflux
 * Documentation: https://sedflux.readthedocs.io.
 
 
+
+========= =======================================
+Component PyMT
+========= =======================================
+Sedflux3D `from pymt.components import Sedflux3D`
+Avulsion  `from pymt.components import Avulsion`
+Plume     `from pymt.components import Plume`
+Subside   `from pymt.components import Subside`
+========= =======================================
+
 ---------------
 Installing pymt
 ---------------

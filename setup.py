@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 import os
 import sys
-
 import numpy as np
+
 import versioneer
 from setuptools import find_packages, setup
 
@@ -29,7 +29,7 @@ import numpy as np
 include_dirs = [np.get_include(), os.path.join(sys.prefix, "include")]
 
 
-libraries = ["bmi_sedflux3d", "bmi_avulsion", "bmi_plume", "bmi_subside"]
+libraries = []
 
 
 library_dirs = []
@@ -45,16 +45,49 @@ extra_compile_args = []
 
 ext_modules = [
     Extension(
-        "pymt_sedflux.lib._bmi",
-        ["pymt_sedflux/lib/_bmi.pyx"],
+        "pymt_sedflux.lib.sedflux3d",
+        ["pymt_sedflux/lib/sedflux3d.pyx"],
         language="c",
         include_dirs=include_dirs,
-        libraries=libraries,
+        libraries=libraries + ["bmi_sedflux3d"],
         library_dirs=library_dirs,
         define_macros=define_macros,
         undef_macros=undef_macros,
         extra_compile_args=extra_compile_args,
-    )
+    ),
+    Extension(
+        "pymt_sedflux.lib.avulsion",
+        ["pymt_sedflux/lib/avulsion.pyx"],
+        language="c",
+        include_dirs=include_dirs,
+        libraries=libraries + ["bmi_avulsion"],
+        library_dirs=library_dirs,
+        define_macros=define_macros,
+        undef_macros=undef_macros,
+        extra_compile_args=extra_compile_args,
+    ),
+    Extension(
+        "pymt_sedflux.lib.plume",
+        ["pymt_sedflux/lib/plume.pyx"],
+        language="c",
+        include_dirs=include_dirs,
+        libraries=libraries + ["bmi_plume"],
+        library_dirs=library_dirs,
+        define_macros=define_macros,
+        undef_macros=undef_macros,
+        extra_compile_args=extra_compile_args,
+    ),
+    Extension(
+        "pymt_sedflux.lib.subside",
+        ["pymt_sedflux/lib/subside.pyx"],
+        language="c",
+        include_dirs=include_dirs,
+        libraries=libraries + ["bmi_subside"],
+        library_dirs=library_dirs,
+        define_macros=define_macros,
+        undef_macros=undef_macros,
+        extra_compile_args=extra_compile_args,
+    ),
 ]
 
 packages = find_packages()
