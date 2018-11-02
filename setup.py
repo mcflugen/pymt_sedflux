@@ -7,95 +7,52 @@ import versioneer
 from setuptools import find_packages, setup
 
 from distutils.extension import Extension
-
-try:
-    import model_metadata
-except ImportError:
-
-    def get_cmdclass(*args, **kwds):
-        return kwds.get("cmdclass", None)
-
-    def get_entry_points(*args):
-        return None
+from model_metadata.utils import get_cmdclass, get_entry_points
 
 
-else:
-    from model_metadata.utils import get_cmdclass, get_entry_points
-
-
-import numpy as np
-
-
-include_dirs = [np.get_include(), os.path.join(sys.prefix, "include")]
-
-
+common_flags = {
+    "include_dirs": [np.get_include(), os.path.join(sys.prefix, "include")],
+    "library_dirs": [],
+    "define_macros": [],
+    "undef_macros": [],
+    "extra_compile_args": [],
+    "language": "c",
+}
 libraries = []
-
-
-library_dirs = []
-
-
-define_macros = []
-
-undef_macros = []
-
-
-extra_compile_args = []
-
 
 ext_modules = [
     Extension(
         "pymt_sedflux.lib.sedflux3d",
         ["pymt_sedflux/lib/sedflux3d.pyx"],
-        language="c",
-        include_dirs=include_dirs,
         libraries=libraries + ["bmi_sedflux3d"],
-        library_dirs=library_dirs,
-        define_macros=define_macros,
-        undef_macros=undef_macros,
-        extra_compile_args=extra_compile_args,
+        **common_flags,
     ),
     Extension(
         "pymt_sedflux.lib.avulsion",
         ["pymt_sedflux/lib/avulsion.pyx"],
-        language="c",
-        include_dirs=include_dirs,
         libraries=libraries + ["bmi_avulsion"],
-        library_dirs=library_dirs,
-        define_macros=define_macros,
-        undef_macros=undef_macros,
-        extra_compile_args=extra_compile_args,
+        **common_flags,
     ),
     Extension(
         "pymt_sedflux.lib.plume",
         ["pymt_sedflux/lib/plume.pyx"],
-        language="c",
-        include_dirs=include_dirs,
         libraries=libraries + ["bmi_plume"],
-        library_dirs=library_dirs,
-        define_macros=define_macros,
-        undef_macros=undef_macros,
-        extra_compile_args=extra_compile_args,
+        **common_flags,
     ),
     Extension(
         "pymt_sedflux.lib.subside",
         ["pymt_sedflux/lib/subside.pyx"],
-        language="c",
-        include_dirs=include_dirs,
         libraries=libraries + ["bmi_subside"],
-        library_dirs=library_dirs,
-        define_macros=define_macros,
-        undef_macros=undef_macros,
-        extra_compile_args=extra_compile_args,
+        **common_flags,
     ),
 ]
 
 packages = find_packages()
 pymt_components = [
-    ("Sedflux3D=pymt_sedflux.lib:Sedflux3D", "meta/Sedflux3D"),
-    ("Avulsion=pymt_sedflux.lib:Avulsion", "meta/Avulsion"),
-    ("Plume=pymt_sedflux.lib:Plume", "meta/Plume"),
-    ("Subside=pymt_sedflux.lib:Subside", "meta/Subside"),
+    ("Sedflux3D=pymt_sedflux.bmi:Sedflux3D", "meta/Sedflux3D"),
+    ("Avulsion=pymt_sedflux.bmi:Avulsion", "meta/Avulsion"),
+    ("Plume=pymt_sedflux.bmi:Plume", "meta/Plume"),
+    ("Subside=pymt_sedflux.bmi:Subside", "meta/Subside"),
 ]
 
 setup(

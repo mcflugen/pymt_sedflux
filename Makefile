@@ -58,14 +58,10 @@ pretty:
 	black setup.py pymt_sedflux
 
 test: ## run tests quickly with the default Python
-	config_file=$(mmd-stage Sedflux3D . > MANIFEST && mmd-query Sedflux3D --var=run.config_file.path)
-	bmi-test pymt_sedflux.bmi:Sedflux3D --infile=$config_file --manifest=MANIFEST -v
-	config_file=$(mmd-stage Avulsion . > MANIFEST && mmd-query Avulsion --var=run.config_file.path)
-	bmi-test pymt_sedflux.bmi:Avulsion --infile=$config_file --manifest=MANIFEST -v
-	config_file=$(mmd-stage Plume . > MANIFEST && mmd-query Plume --var=run.config_file.path)
-	bmi-test pymt_sedflux.bmi:Plume --infile=$config_file --manifest=MANIFEST -v
-	config_file=$(mmd-stage Subside . > MANIFEST && mmd-query Subside --var=run.config_file.path)
-	bmi-test pymt_sedflux.bmi:Subside --infile=$config_file --manifest=MANIFEST -v
+	bmi-test pymt_sedflux.bmi:Sedflux3D -vvv
+	bmi-test pymt_sedflux.bmi:Avulsion -vvv
+	bmi-test pymt_sedflux.bmi:Plume -vvv
+	bmi-test pymt_sedflux.bmi:Subside -vvv
 
 test-all: ## run tests on every Python version with tox
 	tox
