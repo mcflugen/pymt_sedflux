@@ -34,7 +34,7 @@ external sediment source file:          none
 active:                                 yes
 logging:                                no
 repeat interval:                        always
-river values:                           season
+river values:                           external
 river file:                             sedflux_3d_river.kvf
 river name:                             po
 
