@@ -10,8 +10,8 @@ pymt_sedflux
 .. image:: https://img.shields.io/badge/recipe-pymt_sedflux-green.svg
         :target: https://anaconda.org/conda-forge/pymt_sedflux
 
-.. image:: https://img.shields.io/travis/mcflugen/pymt_sedflux.svg
-        :target: https://travis-ci.org/mcflugen/pymt_sedflux
+.. image:: https://img.shields.io/travis/pymt-lab/pymt_sedflux.svg
+        :target: https://travis-ci.org/pymt-lab/pymt_sedflux
 
 .. image:: https://readthedocs.org/projects/pymt_sedflux/badge/?version=latest
         :target: https://pymt_sedflux.readthedocs.io/en/latest/?badge=latest
