@@ -10,7 +10,7 @@ from distutils.extension import Extension
 from model_metadata.utils import get_cmdclass, get_entry_points
 
 
-common_flags = {
+flags = {
     "include_dirs": [np.get_include(), os.path.join(sys.prefix, "include")],
     "library_dirs": [],
     "define_macros": [],
@@ -24,26 +24,22 @@ ext_modules = [
     Extension(
         "pymt_sedflux.lib.sedflux3d",
         ["pymt_sedflux/lib/sedflux3d.pyx"],
-        libraries=libraries + ["bmi_sedflux3d"],
-        **common_flags,
+        **(flags.update(libraries=libraries + ["bmi_sedflux3d"]) or flags),
     ),
     Extension(
         "pymt_sedflux.lib.avulsion",
         ["pymt_sedflux/lib/avulsion.pyx"],
-        libraries=libraries + ["bmi_avulsion"],
-        **common_flags,
+        **(flags.update(libraries=libraries + ["bmi_avulsion"]) or flags),
     ),
     Extension(
         "pymt_sedflux.lib.plume",
         ["pymt_sedflux/lib/plume.pyx"],
-        libraries=libraries + ["bmi_plume"],
-        **common_flags,
+        **(flags.update(libraries=libraries + ["bmi_plume"]) or flags),
     ),
     Extension(
         "pymt_sedflux.lib.subside",
         ["pymt_sedflux/lib/subside.pyx"],
-        libraries=libraries + ["bmi_subside"],
-        **common_flags,
+        **(flags.update(libraries=libraries + ["bmi_subside"]) or flags),
     ),
 ]
 
