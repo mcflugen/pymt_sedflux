@@ -24,22 +24,22 @@ ext_modules = [
     Extension(
         "pymt_sedflux.lib.sedflux3d",
         ["pymt_sedflux/lib/sedflux3d.pyx"],
-        **(flags.update(libraries=libraries + ["bmi_sedflux3d"]) or flags),
+        **(flags.update(libraries=libraries + ["bmi_sedflux3d"]) or flags)
     ),
     Extension(
         "pymt_sedflux.lib.avulsion",
         ["pymt_sedflux/lib/avulsion.pyx"],
-        **(flags.update(libraries=libraries + ["bmi_avulsion"]) or flags),
+        **(flags.update(libraries=libraries + ["bmi_avulsion"]) or flags)
     ),
     Extension(
         "pymt_sedflux.lib.plume",
         ["pymt_sedflux/lib/plume.pyx"],
-        **(flags.update(libraries=libraries + ["bmi_plume"]) or flags),
+        **(flags.update(libraries=libraries + ["bmi_plume"]) or flags)
     ),
     Extension(
         "pymt_sedflux.lib.subside",
         ["pymt_sedflux/lib/subside.pyx"],
-        **(flags.update(libraries=libraries + ["bmi_subside"]) or flags),
+        **(flags.update(libraries=libraries + ["bmi_subside"]) or flags)
     ),
 ]
 
