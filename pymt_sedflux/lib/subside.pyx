@@ -21,8 +21,8 @@ DTYPE_C_TO_PY = {
 }
 
 
-cdef extern from "bmi.h":
-    ctypedef struct Bmi:
+cdef extern from "subside/bmi_subside.h":
+    ctypedef struct BMI_Model:
         # pass
         int (*initialize)(void *self, const char *config_file)
         int (*update)(void *self);
@@ -92,17 +92,17 @@ def ok_or_raise(status):
 # start: subside.pyx
 
 cdef extern from "subside/bmi_subside.h":
-    Bmi* register_bmi_subside(Bmi *model)
+    BMI_Model* register_bmi_subside(BMI_Model *model)
 
 
 cdef class Subside:
-    cdef Bmi* _bmi
+    cdef BMI_Model* _bmi
     cdef char[2048] STR_BUFFER
 
     METADATA = "../data/Subside"
 
     def __cinit__(self):
-        self._bmi = <Bmi*>malloc(sizeof(Bmi))
+        self._bmi = <BMI_Model*>malloc(sizeof(BMI_Model))
 
         if self._bmi is NULL:
             raise MemoryError()
