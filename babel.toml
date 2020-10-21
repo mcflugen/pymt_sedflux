@@ -1,0 +1,44 @@
+[library]
+[library.Sedflux3D]
+language = "c"
+library = "bmi_sedflux3d"
+header = "sedflux3d/bmi_sedflux3d.h"
+entry_point = "register_bmi_sedflux3d"
+
+[library.Avulsion]
+language = "c"
+library = "bmi_avulsion"
+header = "avulsion/bmi_avulsion.h"
+entry_point = "register_bmi_avulsion"
+
+[library.Plume]
+language = "c"
+library = "bmi_plume"
+header = "plume/bmi_plume.h"
+entry_point = "register_bmi_plume"
+
+[library.Subside]
+language = "c"
+library = "bmi_subside"
+header = "subside/bmi_subside.h"
+entry_point = "register_bmi_subside"
+
+[build]
+undef_macros = []
+define_macros = []
+libraries = []
+library_dirs = []
+include_dirs = []
+extra_compile_args = []
+
+[package]
+name = "pymt_sedflux"
+requirements = ["sedflux"]
+
+[info]
+github_username = "pymt-lab"
+package_author = "csdms"
+package_author_email = "csdms@colorado.edu"
+package_license = "MIT"
+summary = "PyMT plugin for sedflux"
+

@@ -4,7 +4,7 @@ pymt_sedflux
 
 
 .. image:: https://img.shields.io/badge/CSDMS-Basic%20Model%20Interface-green.svg
-        :target: https://bmi-forum.readthedocs.io/
+        :target: https://bmi.readthedocs.io/
         :alt: Basic Model Interface
 
 .. image:: https://img.shields.io/badge/recipe-pymt_sedflux-green.svg
@@ -13,8 +13,8 @@ pymt_sedflux
 .. image:: https://img.shields.io/travis/pymt-lab/pymt_sedflux.svg
         :target: https://travis-ci.org/pymt-lab/pymt_sedflux
 
-.. image:: https://readthedocs.org/projects/pymt_sedflux/badge/?version=latest
-        :target: https://pymt_sedflux.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pymt-sedflux/badge/?version=latest
+        :target: https://pymt-sedflux.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
@@ -25,19 +25,24 @@ pymt_sedflux
 PyMT plugin for sedflux
 
 
-* Free software: MIT license
-* Documentation: https://sedflux.readthedocs.io.
+* Free software: MIT License
+* Documentation: https://pymt-sedflux.readthedocs.io.
 
 
 
-========= =======================================
+
+========= ===================================
 Component PyMT
-========= =======================================
-Sedflux3D `from pymt.components import Sedflux3D`
-Avulsion  `from pymt.components import Avulsion`
-Plume     `from pymt.components import Plume`
-Subside   `from pymt.components import Subside`
-========= =======================================
+========= ===================================
+
+Avulsion  `from pymt.models import Avulsion`
+
+Plume     `from pymt.models import Plume`
+
+Sedflux3D `from pymt.models import Sedflux3D`
+
+Subside   `from pymt.models import Subside`
+========= ===================================
 
 ---------------
 Installing pymt
@@ -55,7 +60,7 @@ into which to install it. This can be done with,
 
 .. code::
 
-  conda create -n pymt python=3.6
+  conda create -n pymt python=3
   conda activate pymt
 
 Once the `conda-forge` channel has been enabled, `pymt` can be installed with:

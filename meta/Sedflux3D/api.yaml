@@ -1,4 +1,4 @@
-name: sedflux
+name: pymt_sedflux
 language: c
-package: sedflux
+package: pymt_sedflux
 class: Sedflux3D

@@ -1,5 +1,14 @@
 #! /usr/bin/env python
+import pkg_resources
 
-from .bmi import Sedflux3D, Avulsion, Plume, Subside
+__version__ = pkg_resources.get_distribution("pymt_sedflux").version
 
-__all__ = ["Sedflux3D", "Avulsion", "Plume", "Subside"]
+
+from .bmi import Avulsion, Plume, Sedflux3D, Subside
+
+__all__ = [
+    "Avulsion",
+    "Plume",
+    "Sedflux3D",
+    "Subside",
+]
