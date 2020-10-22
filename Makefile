@@ -58,16 +58,16 @@ pretty:
 	black setup.py pymt_sedflux
 
 test: ## run tests quickly with the default Python
-	bmi-test pymt_sedflux.bmi:Sedflux3D -vvv
 	bmi-test pymt_sedflux.bmi:Avulsion -vvv
 	bmi-test pymt_sedflux.bmi:Plume -vvv
+	bmi-test pymt_sedflux.bmi:Sedflux3D -vvv
 	bmi-test pymt_sedflux.bmi:Subside -vvv
 
 test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source sedflux -m pytest
+	coverage run --source pymt_sedflux -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
@@ -92,4 +92,4 @@ dist: clean ## builds source and wheel package
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
-	python setup.py develop
+	pip install -e .

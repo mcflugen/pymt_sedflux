@@ -48,8 +48,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pymt_sedflux'
-copyright = u"2018, Eric Hutton"
-author = u"Eric Hutton"
+copyright = u"2020, csdms"
+author = u"csdms"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -130,7 +130,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'pymt_sedflux.tex',
      u'pymt_sedflux Documentation',
-     u'Eric Hutton', 'manual'),
+     u'csdms', 'manual'),
 ]
 
 

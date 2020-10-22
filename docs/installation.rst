@@ -39,13 +39,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/mcflugen/pymt_sedflux
+    $ git clone git://github.com/pymt-lab/pymt_sedflux
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/mcflugen/pymt_sedflux/tarball/master
+    $ curl  -OL https://github.com/pymt-lab/pymt_sedflux/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -55,5 +55,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/mcflugen/pymt_sedflux
-.. _tarball: https://github.com/mcflugen/pymt_sedflux/tarball/master
+.. _Github repo: https://github.com/pymt-lab/pymt_sedflux
+.. _tarball: https://github.com/pymt-lab/pymt_sedflux/tarball/master
