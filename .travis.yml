@@ -43,7 +43,7 @@ install:
 script:
 - conda install -q --file=requirements-testing.txt
 - python -c 'import numpy; import pymt_sedflux'
-- bmi-test pymt_sedflux.bmi:Sedflux3D -vvv
+# - bmi-test pymt_sedflux.bmi:Sedflux3D -vvv
 - bmi-test pymt_sedflux.bmi:Avulsion -vvv
 - bmi-test pymt_sedflux.bmi:Plume -vvv
 - bmi-test pymt_sedflux.bmi:Subside -vvv
