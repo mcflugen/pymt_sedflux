@@ -1,6 +1,12 @@
 Changelog for pymt_sedflux
 ==========================
 
+0.2.1 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 0.2.0 (2020-10-21)
 ------------------
 
